@@ -1,3 +1,2 @@
-// Interface pública do módulo streak
-// getStreak(projectId), processVerdict(projectId, verdict)
-export {};
+export { getStreak, processVerdict } from "./service";
+export type { Streak, StreakUpdateResult, StreakVerdict } from "./types";
