@@ -1,6 +1,7 @@
 export {
   createProject,
   getProject,
+  getProjectById,
   getValidationCriteria,
   updateProject,
   upsertValidationCriteria,

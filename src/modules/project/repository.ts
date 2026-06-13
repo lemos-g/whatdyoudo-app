@@ -51,6 +51,21 @@ export async function findActiveProjectByUserId(userId: string): Promise<Project
   return data ? mapProject(data) : null;
 }
 
+export async function findProjectById(projectId: string): Promise<Project | null> {
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("projects")
+    .select("*")
+    .eq("id", projectId)
+    .maybeSingle();
+
+  if (error) {
+    throw error;
+  }
+
+  return data ? mapProject(data) : null;
+}
+
 export async function countActiveProjects(userId: string): Promise<number> {
   const supabase = await createClient();
   const { count, error } = await supabase

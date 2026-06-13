@@ -1,3 +1,8 @@
-// Interface pública do módulo notifications
-// subscribe(userId, subscription), scheduleReminder(projectId)
-export {};
+export {
+  sendDailyReminder,
+  sendStreakAlert,
+  sendStreakReset,
+  subscribe,
+  unsubscribe,
+} from "./service";
+export type { NotificationPayload, PushSubscriptionRecord, SubscribeInput } from "./types";

@@ -29,6 +29,10 @@ export async function getProject(userId: string): Promise<Project | null> {
   return repository.findActiveProjectByUserId(userId);
 }
 
+export async function getProjectById(projectId: string): Promise<Project | null> {
+  return repository.findProjectById(projectId);
+}
+
 export async function createProject(input: CreateProjectInput): Promise<Project> {
   const activeProjectCount = await repository.countActiveProjects(input.userId);
 
